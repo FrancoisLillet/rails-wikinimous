@@ -1,0 +1,7 @@
+<p>Here is the list of your articles:</p>
+<ul>
+<% @articles.each do |article| %>
+  <li ><%= link_to article.title, article_path(article) %> <%= link_to "🗑", article_path(article.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> </li>
+<% end %>
+</ul>
+<p><%= link_to "Add a new article", new_article_path%></p>
